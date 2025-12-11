@@ -1,0 +1,20 @@
+[Unit]
+Description=.NET Web API
+ConditionPathExists=/snap/bin/dotnet
+ConditionPathIsDirectory=/home/toufiq/dev/devops/intern-program/phase-1/testdotnet-webapi
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/toufiq/dev/devops/intern-program/phase-1/testdotnet-webapi
+ExecStartPre=/snap/bin/dotnet publish -c Release
+ExecStart=/snap/bin/dotnet bin/Release/net10.0/testdotnet-webapi.dll
+KillSignal=SIGTERM
+KillMode=control-group
+Restart=unless-stopped
+SyslogIdentifier=testdotnet-webapi
+User=toufiq
+Group=toufiq
+
+[Install]
+WantedBy=multi-user.target
