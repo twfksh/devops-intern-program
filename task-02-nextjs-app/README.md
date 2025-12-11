@@ -35,6 +35,21 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## To start systemd service
 
+```sh
+# Copy the systemd.service unit file to /etc/systemd/system dir
+sudo cp testnextjs.service /etc/systemd/system/testnextjs.service
+
+# Start the application
+sudo systemctl start testnextjs
+
+# Stop the application
+sudo systemctl stop testnextjs
+```
+
+* NOTE:
+
+Update the `ConditionPathExists=`, `ConditionPathIsDirectory=` and `WorkingDirectory=` accordingly. Also update the `npm` or `bun` cli path in `ExecStart` and `ExecStartPre`.
+
 ## To run using docker
 
 ```sh
