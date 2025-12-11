@@ -24,7 +24,7 @@ dotnet publish -c Release
 dotnet ./bin/Release/net10.0/publish/testdotnet-webapi.dll
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:5000` with your browser to see the result.
 
 ## To start systemd service
 
@@ -53,5 +53,5 @@ docker build -t dotnet-webapi .
 docker run -p 5000:8080 dotnet-webapi:latest
 ```
 
-Open [http://localhost:5000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:5000` with your browser to see the result.
 
